@@ -1,0 +1,100 @@
+/* --- ნაწილი 1: Info Box-ების გასწორება (სიმაღლე და ღილაკები) --- */
+
+/* Equal height fix for Kadence Info Box grid */
+.cards-equal .kt-row-column-wrap,
+.cards-equal .kt-inside-inner-col {
+  height: 100%;
+}
+
+.cards-equal .kt-inside-inner-col {
+  display: flex;
+}
+
+.cards-equal .wp-block-kadence-infobox,
+.cards-equal .kt-blocks-info-box,
+.cards-equal .kt-blocks-info-box-link-wrap {
+  /* თვითონ ბოქსი მთლიან სვეტს იკავებს */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* შიგთავსის განაწილება: აიკონი/სათაური ზევით, ტექსტი+ქვედა ნაწილი დაბლა */
+.cards-equal .kt-blocks-info-box-media {
+  margin-bottom: 0.75rem;
+}
+
+.cards-equal .kt-blocks-info-box-text {
+  margin-top: auto;  /* ტექსტობრივი ბლოკი ჩამოდის ბოლოში */
+}
+
+/* --- ნაწილი 2: "გაზიარეთ" ტექსტის გასწორება (Sassy Social Share) --- */
+
+.heateor_sss_sharing_title {
+    color: #757575;      /* ნაცრისფერი ფერი */
+    font-weight: normal !important; /* სისქის მოკლება */
+    margin-bottom: 0.625rem; /* დაშორება აიკონებამდე (ქვევით) */
+    margin-top: 1.875rem;    /* დაშორება ღილაკიდან (ზევით) - ეს დაემატა */
+    display: block;      /* ეს უზრუნველყოფს, რომ მარჯინმა იმუშაოს */
+}
+
+.wp-block-button__link,
+.wp-block-button__link:visited,
+.wp-block-button__link:active,
+.wp-block-button__link:focus {
+    background-color: #F37A20 !important;
+    color: #1a1a1a !important; /* მუქი ტექსტი */
+}
+
+.wp-block-button__link:hover {
+    background-color: #C0560E !important;
+    color: #ffffff !important; /* hover-ზე თეთრი კარგია, მუქ ფონზე */
+}
+
+/* 1. მთავარი ბარათი - ეს არის "დედა" კონტეინერი */
+.elite-card {
+    /* აქ არავითარ შემთხვევაში არ დაწერო overflow: hidden! */
+    border-radius: 12px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+/* 2. ჰოვერის ეფექტი - აწევა */
+.elite-card:hover {
+    transform: translateY(-10px) !important; /* აწევა */
+    z-index: 10; /* რომ ჩრდილი სხვებს გადაეფაროს */
+}
+
+/* 3. ფონის "გადმოღვრის" (სამკუთხედების) ფიქსი */
+/* ეს კოდი ეუბნება შიდა კონტეინერებს, რომ ისინიც უნდა მომრგვალდნენ */
+.elite-card .kt-blocks-info-box-link-wrap,
+.elite-card .kt-info-box-content {
+    border-radius: 12px !important; /* ეს აქრობს სამკუთხედებს! */
+}
+.kadence-testimonial-image-intrisic {
+	filter: grayscale(100%);
+	background-color: #dee2e6;	
+}
+.site-footer .footer-social-inner-wrap {
+    display: grid !important;
+	grid-template-columns: 1fr;
+	gap: 10px;
+
+}
+.site-footer .social-button {
+    border-radius: 6px !important;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+
+}
+
+.site-footer .social-button:hover {
+    transform: translateY(-2px);
+}
+
+
+#mobile-drawer #mobile-site-navigation a{
+  font-size: 1.15rem;   /* ~18.4px */
+  line-height: 1.6;
+  padding: 1rem 0;
+}
+
