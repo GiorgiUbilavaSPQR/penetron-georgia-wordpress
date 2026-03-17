@@ -75,26 +75,23 @@
 	filter: grayscale(100%);
 	background-color: #dee2e6;	
 }
-.site-footer .footer-social-inner-wrap {
-    display: grid !important;
-	grid-template-columns: 1fr;
-	gap: 10px;
-
-}
-.site-footer .social-button {
-    border-radius: 6px !important;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-
-}
-
-.site-footer .social-button:hover {
-    transform: translateY(-2px);
-}
-
 
 #mobile-drawer #mobile-site-navigation a{
   font-size: 1.15rem;   /* ~18.4px */
   line-height: 1.6;
   padding: 1rem 0;
+}
+
+/* --- ნაწილი: Footer Contact — მინიმალისტური დიზაინი --- */
+/* ტელეფონები და ემეილი სუფთა ბლოკებად, social button სტილის გარეშე */
+.footer-contact a {
+	display: block;
+	margin-bottom: 6px;
+}
+.footer-contact a:hover{
+  text-decoration:none;	
+}
+.footer-hours {
+  opacity: 0.85;
 }
 
