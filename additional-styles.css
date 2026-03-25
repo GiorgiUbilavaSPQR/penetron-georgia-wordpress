@@ -1,97 +1,113 @@
-/* --- ნაწილი 1: Info Box-ების გასწორება (სიმაღლე და ღილაკები) --- */
+/* --- ნაწილი 1: ღილაკების სტილი და hover ეფექტი --- */
 
-/* Equal height fix for Kadence Info Box grid */
+/* !important აუცილებელია — LiteSpeed Cache CSS async-ით შავ ფერს აჩვენებს ჩატვირთვისას */
+.wp-block-kadence-advancedbtn .kb-button {
+  background-color: #C0560E !important;
+  color: #ffffff !important;
+  transition: all 0.25s ease;
+}
+.wp-block-kadence-advancedbtn .kb-button:hover {
+  background-color: #A84B0C !important;
+  transform: translateY(-2px);
+}
+
+
+/* --- ნაწილი 2: Info Box ბარათების hover ეფექტი --- */
+
+/* elite-card კლასი: პროდუქტების და საკონტაქტო გვერდის ბარათები */
+.elite-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.elite-card:hover {
+  transform: translateY(-6px);
+}
+
+/* rec-card კლასი: პროდუქტის გვერდზე რეკომენდებული სისტემის ბარათი */
+.rec-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.rec-card:hover {
+  transform: translateY(-4px);
+}
+
+/* გამოყენების სფეროების გვერდის ბარათები (sferoebi-grid კლასი Row Layout-ზე) */
+.sferoebi-grid .wp-block-kadence-infobox {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.sferoebi-grid .wp-block-kadence-infobox:hover {
+  transform: translateY(-6px);
+}
+
+
+/* --- ნაწილი 3: Info Box-ების გასწორება (სიმაღლე და ღილაკები) --- */
+
+/* cards-equal კლასი: ბარათების თანაბარი სიმაღლე grid-ში */
 .cards-equal .kt-row-column-wrap,
 .cards-equal .kt-inside-inner-col {
   height: 100%;
 }
-
 .cards-equal .kt-inside-inner-col {
   display: flex;
 }
-
 .cards-equal .wp-block-kadence-infobox,
 .cards-equal .kt-blocks-info-box,
 .cards-equal .kt-blocks-info-box-link-wrap {
-  /* თვითონ ბოქსი მთლიან სვეტს იკავებს */
+  /* ბოქსი მთლიან სვეტს იკავებს */
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-/* შიგთავსის განაწილება: აიკონი/სათაური ზევით, ტექსტი+ქვედა ნაწილი დაბლა */
+/* შიგთავსის განაწილება: აიკონი/სათაური ზევით, ტექსტი+ლინკი დაბლა */
 .cards-equal .kt-blocks-info-box-media {
   margin-bottom: 0.75rem;
 }
-
 .cards-equal .kt-blocks-info-box-text {
-  margin-top: auto;  /* ტექსტობრივი ბლოკი ჩამოდის ბოლოში */
+  margin-top: auto;
 }
 
-/* --- ნაწილი 2: "გაზიარეთ" ტექსტის გასწორება (Sassy Social Share) --- */
+
+/* --- ნაწილი 4: ტესტიმონიალების სურათები (შავ-თეთრი ფილტრი) --- */
+
+.kadence-testimonial-image-intrisic {
+  filter: grayscale(100%);
+  background-color: #dee2e6;
+}
+
+
+/* --- ნაწილი 5: "გაზიარეთ" ტექსტის გასწორება (Sassy Social Share) --- */
 
 .heateor_sss_sharing_title {
-    color: #757575;      /* ნაცრისფერი ფერი */
-    font-weight: normal !important; /* სისქის მოკლება */
-    margin-bottom: 0.625rem; /* დაშორება აიკონებამდე (ქვევით) */
-    margin-top: 1.875rem;    /* დაშორება ღილაკიდან (ზევით) - ეს დაემატა */
-    display: block;      /* ეს უზრუნველყოფს, რომ მარჯინმა იმუშაოს */
+  color: #757575;
+  font-weight: normal !important;
+  margin-bottom: 0.625rem;
+  margin-top: 1.875rem;
+  display: block;
 }
 
-.wp-block-button__link,
-.wp-block-button__link:visited,
-.wp-block-button__link:active,
-.wp-block-button__link:focus {
-    background-color: #F37A20 !important;
-    color: #1a1a1a !important; /* მუქი ტექსტი */
-}
 
-.wp-block-button__link:hover {
-    background-color: #C0560E !important;
-    color: #ffffff !important; /* hover-ზე თეთრი კარგია, მუქ ფონზე */
-}
+/* --- ნაწილი 6: მობილური მენიუ --- */
 
-/* 1. მთავარი ბარათი - ეს არის "დედა" კონტეინერი */
-.elite-card {
-    /* აქ არავითარ შემთხვევაში არ დაწერო overflow: hidden! */
-    border-radius: 12px !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1;
-}
-
-/* 2. ჰოვერის ეფექტი - აწევა */
-.elite-card:hover {
-    transform: translateY(-10px) !important; /* აწევა */
-    z-index: 10; /* რომ ჩრდილი სხვებს გადაეფაროს */
-}
-
-/* 3. ფონის "გადმოღვრის" (სამკუთხედების) ფიქსი */
-/* ეს კოდი ეუბნება შიდა კონტეინერებს, რომ ისინიც უნდა მომრგვალდნენ */
-.elite-card .kt-blocks-info-box-link-wrap,
-.elite-card .kt-info-box-content {
-    border-radius: 12px !important; /* ეს აქრობს სამკუთხედებს! */
-}
-.kadence-testimonial-image-intrisic {
-	filter: grayscale(100%);
-	background-color: #dee2e6;	
-}
-
-#mobile-drawer #mobile-site-navigation a{
-  font-size: 1.15rem;   /* ~18.4px */
+/* მობილურ მენიუში ტექსტის ზომა და დაშორება */
+#mobile-drawer #mobile-site-navigation a {
+  font-size: 1.15rem;
   line-height: 1.6;
   padding: 1rem 0;
 }
 
-/* --- ნაწილი: Footer Contact — მინიმალისტური დიზაინი --- */
-/* ტელეფონები და ემეილი სუფთა ბლოკებად, social button სტილის გარეშე */
+
+/* --- ნაწილი 7: ფუტერი --- */
+
+/* საკონტაქტო ლინკების დაშორება */
 .footer-contact a {
-	display: block;
-	margin-bottom: 6px;
+  display: block;
+  margin-bottom: 6px;
 }
-.footer-contact a:hover{
-  text-decoration:none;	
+.footer-contact a:hover {
+  text-decoration: none;
 }
+
+/* სამუშაო საათების გამჭვირვალობა */
 .footer-hours {
   opacity: 0.85;
 }
-
