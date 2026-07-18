@@ -1,64 +1,39 @@
-/* --- ნაწილი 1: ღილაკების სტილი და hover ეფექტი --- */
+/* 
+   Last updated: 2026-07-18
+*/
 
-/* !important აუცილებელია — LiteSpeed Cache CSS async-ით შავ ფერს აჩვენებს ჩატვირთვისას */
+/* Part 1: Button styles and hover effect */
+/* !important required — LiteSpeed Cache loads CSS async, which causes black color flash on render */
 .wp-block-kadence-advancedbtn .kb-button {
   background-color: #C0560E !important;
   color: #ffffff !important;
-  transition: all 0.25s ease;
+  transition: background-color 0.25s ease, transform 0.25s ease;
 }
 .wp-block-kadence-advancedbtn .kb-button:hover {
   background-color: #A84B0C !important;
   transform: translateY(-2px);
 }
 
-
-/* --- ნაწილი 2: Info Box ბარათების hover ეფექტი --- */
-
-/* elite-card კლასი: პროდუქტების და საკონტაქტო გვერდის ბარათები */
-.elite-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.elite-card:hover {
-  transform: translateY(-6px);
-}
-
-/* rec-card კლასი: პროდუქტის გვერდზე რეკომენდებული სისტემის ბარათი */
-.rec-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.rec-card:hover {
-  transform: translateY(-4px);
-}
-
-/* გამოყენების სფეროების გვერდის ბარათები (sferoebi-grid კლასი Row Layout-ზე) */
+/* Part 2: Card hover effects */
+.elite-card,
+.rec-card,
 .sferoebi-grid .wp-block-kadence-infobox {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+/* elite-card: product and contact page cards */
+.elite-card:hover {
+  transform: translateY(-6px);
+}
+/* rec-card: recommended system card on product page */
+.rec-card:hover {
+  transform: translateY(-4px);
+}
+/* sferoebi-grid: application areas page cards */
 .sferoebi-grid .wp-block-kadence-infobox:hover {
   transform: translateY(-6px);
 }
 
-
-/* --- ნაწილი 3: Info Box-ების გასწორება (სიმაღლე და ღილაკები) --- */
-
-/* cards-equal კლასი: ბარათების თანაბარი სიმაღლე grid-ში */
-.cards-equal .kt-row-column-wrap,
-.cards-equal .kt-inside-inner-col {
-  height: 100%;
-}
-.cards-equal .kt-inside-inner-col {
-  display: flex;
-}
-.cards-equal .wp-block-kadence-infobox,
-.cards-equal .kt-blocks-info-box,
-.cards-equal .kt-blocks-info-box-link-wrap {
-  /* ბოქსი მთლიან სვეტს იკავებს */
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* შიგთავსის განაწილება: აიკონი/სათაური ზევით, ტექსტი+ლინკი დაბლა */
+/* Part 3: Info Box inner alignment */
 .cards-equal .kt-blocks-info-box-media {
   margin-bottom: 0.75rem;
 }
@@ -66,39 +41,21 @@
   margin-top: auto;
 }
 
-
-/* --- ნაწილი 4: ტესტიმონიალების სურათები (შავ-თეთრი ფილტრი) --- */
-
-.kadence-testimonial-image-intrisic {
-  filter: grayscale(100%);
-  background-color: #dee2e6;
-}
-
-
-/* --- ნაწილი 5: "გაზიარეთ" ტექსტის გასწორება (Sassy Social Share) --- */
-
+/* Part 4: Social share title */
 .heateor_sss_sharing_title {
   color: #757575;
   font-weight: normal !important;
-  margin-bottom: 0.625rem;
   margin-top: 1.875rem;
+  margin-bottom: 0.625rem;
   display: block;
 }
 
-
-/* --- ნაწილი 6: მობილური მენიუ --- */
-
-/* მობილურ მენიუში ტექსტის ზომა და დაშორება */
+/* Part 5: Mobile navigation menu */
 #mobile-drawer #mobile-site-navigation a {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  padding: 1rem 0;
+  padding: 0.7rem 0;
 }
 
-
-/* --- ნაწილი 7: ფუტერი --- */
-
-/* საკონტაქტო ლინკების დაშორება */
+/* Part 6: Footer */
 .footer-contact a {
   display: block;
   margin-bottom: 6px;
@@ -106,8 +63,18 @@
 .footer-contact a:hover {
   text-decoration: none;
 }
-
-/* სამუშაო საათების გამჭვირვალობა */
 .footer-hours {
   opacity: 0.85;
+}
+
+/* Part 7: Testimonial card — push author row to bottom */
+.review-card-inner .wp-block-columns {
+  margin-top: auto;
+}
+
+/* Part 8: Engineering grid background pattern */
+.kb-row-layout-wrap.blueprint-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M 40 0 L 0 0 0 40' fill='none' stroke='rgba(255%2C255%2C255%2C0.04)' stroke-width='1'/%3E%3C/svg%3E") !important;
+  background-repeat: repeat;
+  background-size: 40px 40px;
 }
