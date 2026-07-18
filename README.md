@@ -74,6 +74,7 @@ All styling below was written manually to compensate for Kadence Free limitation
 - Footer social links grid layout
 - Mobile drawer navigation font sizing
 - Testimonial image grayscale treatment
+- Reduced `!important` usage through proper selector specificity after live testing
 
 ---
 
